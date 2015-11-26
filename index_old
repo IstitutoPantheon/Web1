@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>La nostra prima pagina web</title>
+        <style type="text/css">
+        	h2 {
+				font-size:40px;
+				font-family: Arial, Helvetica, sans-serif;
+				color:#FF00FF;
+				text-align:center;
+				text-transform:uppercase;
+			}
+			.destra {
+				text-align:right;
+			}
+			.blocco {
+				margin-left:100px;
+				width:33%;
+				float:left;
+			}
+			#immagineCiccio {
+				width:300px;
+			}/* Occupa sempre 300px */
+			#secondaImmagine {
+				width: 100%;
+			}/* Occupa il 100% della larghezza del genitore */
+        </style>
+    </head>
+    
+    <body>
+    	<div class="blocco">
+            <h1>Titolo 1</h1>
+            <h2>Titolo 2</h2>
+            <h3>Titolo 3</h3>
+            <h4>Titolo 4</h4>
+            <h5>Titolo 5</h5>
+            
+            <p><strong>Questo è un paragrafo</strong></p>
+            
+            <a href="img/alberti.jpg">
+                
+                <p>
+                    <!-- Questo è un commento -->
+                    <img src="img/alberti.jpg" id="immagineCiccio">
+                    <em>Secondo Paragrafo</em>
+                </p>
+            </a>
+            
+            <a href="http://www.corriere.it"><p><strong><em>Terzo Paragrafo</em></strong></p></a>
+            
+            <h2 class="destra">Di nuovo un titolo h2</h2>
+        </div>
+        <!-- Secondo blocco -->
+        <div class="blocco">
+        	<h3>Un titolo in un secondo div</h3>
+            <!-- esempio di elenco -->
+            <ul>
+            	<li>Primo punto</li>
+                <li>Secondo Punto</li>
+                <li>Terzo Punto</li>
+            </ul>
+            
+            
+            
+            
+            
+            <img src="img/pantheon.png" id="secondaImmagine">
+            <!-- Inserisco un altro blocco dentro al secondo blocco -->
+            <div class="blocco">
+            	<h3>Titolo nel blocco dentro al blocco</h3>
+            </div>
+        </div>
+        <!-- Fine secondo blocco -->
+        
+    </body>
+</html>
