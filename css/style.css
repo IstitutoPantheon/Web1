@@ -1,0 +1,121 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/* Regola per fare il logo più piccolo */
+#logoSito {
+	height : 30px;
+}
+
+/* Attacca l'immagine in alto al menu */
+.immagineAttaccata {
+	padding:0px;
+	margin-top:-20px;
+}
+
+.titoloAlto {
+	position: absolute;
+	bottom: 30%;
+	right: 6%;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 4em;
+	text-shadow: 3px 3px 5px #000;
+}
+body {}
+p {}
+
+* {font-family: Verdana, Geneva, sans-serif;}
+
+.ciccio { width:60%;} /* Questa regola si applica a tutti gli elementi con classe "ciccio" */
+div.ciccio { width: 100%;} /* Si applica SOLO ai div con classe "ciccio" */
+img.ciccio { width: 40%; } /* Si applica SOLO alle immagini con classe "ciccio" */
+
+img#ciccio2 {} /* Si applica alle immagini con id "ciccio2" */
+
+div div.col-md-8 .form-group {} /* Si applica a tutti gli elementi di classe "form-group" discendenti di un div di classe "col-md-8" discendente a sua volta di un div */
+
+.ciccio > .ciccio4 {} /* Si applica SOLO agli elementi di classe "ciccio4" figli diretti di un elemento di classe "ciccio" */
+
+.ciccio + .ciccio2 {} /* Si applica agli elementi di classe "ciccio2" fratelli di un elemento di classe "ciccio" ed ADIACENTI ad esso */
+
+.ciccio ~ .ciccio2 {} /* Si applica agli elementi di classe "ciccio2" fratelli di un elemento di classe "ciccio" e NON NECESSARIAMENTE ADIACENTI ad esso */
+
+input[type] {} /* Si applica a tutti gli elementi input con l'attributo "type" */
+
+input[type="text"] {} /* Si applica a tutti gli elementi input con l'attributo "type" e il valore "text" */
+
+input[type^="te"] {} /* Si applica a tutti gli elementi input con l'attributo "type" e il valore che COMINCIA per "te" */
+
+input[type$="xt"] {} /* Si applica a tutti gli elementi input con l'attributo "type" e il valore che FINISCE per "xt" */
+
+input[type*="ex"] {} /* Si applica a tutti gli elementi input con l'attributo "type" e il valore che CONTIENE "ex" */
+
+input:focus {border: 10px solid #000;} /* Si applica al singolo elemento input SOLO nel momento in cui è attivo (cioè ci si sta scrivendo dentro */
+
+button:hover {width:600px; } /* Si applica ad un elemento button SOLO nel momento in cui l'utente ci passa sopra con il mouse */
+
+.titoloAlto:hover { color: F00; }
+
+table:hover {box-shadow: 5px 5px 15px #F00;}
+
+
+.ciccio1000 { width: 50% !important; }
+.ciccio1000 { width: 30%; }
+div.ciccio1000 { width: 50%; }
+body .container > div.ciccio1000 {width: 10%; } /* In caso di conflitto i parametri di risoluzione sono IMPORTANZA, ORIGINE, SPECIFICITA', ORDINE DI SCRITTURA */
+
+@media (max-width: 768px) {
+	.formVisibile {
+		visibility:hidden !important;
+	}
+} /* Si applica ai device con una larghezza massima di 768 px */
+
+@media (max-width: 480px) {
+	.titoloAlto {
+		font-size: 2em;
+		}	
+} /* Si applica ai device con una larghezza massima di 480px */
+
+
+
+@media screen and (min-width: 480px) and (max-width: 992px) {} /* Si applica ai device di tipo screen con una larghezza minima di 480px e una larghezza massima di 992px */
+
+@media print {} /* Si applica solo quando si manda in stampa la pagina */
+
+@media handheld and (orientation: portrait) {} /* Si applica agli smartphone tenuti in verticale */
+
+.transizioneImg {
+	max-width:100%;
+	overflow:hidden;
+}
+
+.transizioneImg:hover {
+	transform: scale(1.2,1.2);
+}
+
+figure {
+	max-width:100%;
+}
+figcaption {
+	position: absolute;
+    top: 50%;
+    right: 10%;
+    color: white;
+	text-shadow: .5px .5px 3px #333;
+}/* Regola per i titoli "sulle" immagini */
+
+figcaption > p {
+	font-size:0.8em;
+	margin-top:-10px;
+} /* Regola per i paragrafi all'interno dei titoli "sulle" immagini */
+
+figure.transizioneImg img {max-height:150px; }
+
+
+
+
+
+
+
+
