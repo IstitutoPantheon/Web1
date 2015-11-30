@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Prove javascript</title>
+</head>
+
+<body>
+
+<script>
+
+numero1 = 135;
+numero2 = 28;
+numero3 = numero1 * numero2;
+console.log(numero3);
+
+
+var stringa = "Buongiorno mondo!";
+
+document.write("<h1>" + stringa + "</h1>");
+
+// window.alert(stringa);
+
+var numero4 = prompt("Scrivi un numero", "");
+var numero5 = prompt("Scrivi un altro numero", "");
+
+
+/* ***************
+* Il costrutto if prevede una condizione tra parentesi tonda
+* Al termine della condizione viene restituito un booleano
+* Se true viene eseguito il codice tra parentesi graffe
+* Se false l'interprete passa oltre la chiusura della parentesi
+* graffa
+****************** */
+
+if(numero4 > numero5) {
+	document.write(numero4 + " è maggiore di " + numero5);
+	}
+else if(numero4 == numero5) {
+	document.write(numero4 + " è uguale a " + numero5);
+	}
+else {
+	document.write(numero4 + " è minore di " + numero5);
+	}
+
+
+
+
+</script>
+
+
+
+</body>
+</html>
