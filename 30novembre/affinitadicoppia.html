@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Verifica la tua affinità di coppia</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+
+<body>
+
+<script>
+/***
+Questo script è preliminare all'esercizio vero e proprio
+var numeroCasuale = Math.round(Math.random() * 10);
+
+if(numeroCasuale >= 5) {
+	var immagine = "img/art-director.jpg";
+	}
+else {
+	var immagine = "img/video-editing.jpg";
+	}
+
+document.write("<img src=\"" + immagine + "\">");
+*/
+
+var nomePrimoPartner = prompt("Inserisci il nome del primo partner", ""); // Chiedo con un prompt il primo nome
+
+var nomeSecondoPartner = prompt("Inserisci il nome del secondo partner", ""); // Chiedo con un prompt il secondo nome
+
+var numeroCasuale = Math.round(Math.random() * 10); // Genero un numero casuale tra 0 e 10
+
+if(numeroCasuale < 4) {
+	var immagine = "img/schifo.jpg";
+	var titoloPagina = nomePrimoPartner + " e " + nomeSecondoPartner + ", insieme fate pena!";
+	var testoPagina = "Cari " + nomePrimoPartner + " e " + nomeSecondoPartner + ", dovreste rivedere la vostra situazione!!! La vostra coppia non funziona proprio, fossimo in voi ci lasceremmo all'istante!";
+	}
+else if(numeroCasuale >= 4 && numeroCasuale <= 6) {
+		var titoloPagina = nomePrimoPartner + " e " + nomeSecondoPartner + ", siete una coppia senza troppe pretese!";
+
+	} // L'operatore logico AND (&&) restituisce true solo se TUTTE le condizioni si verificano
+else if(numeroCasuale == 7 || numeroCasuale == 8) {
+		var titoloPagina = nomePrimoPartner + " e " + nomeSecondoPartner + ", siete OK!";
+
+	} // L'operatore logico OR (||) restituisce true quando ALMENO UNA delle condizioni si verifica
+else {
+		var titoloPagina = nomePrimoPartner + " e " + nomeSecondoPartner + ", siete perfetti insieme!";
+
+	}
+
+document.write("<h1>" + titoloPagina + "</h1>");
+</script>
+
+<p>Ti interessa sapere tutto della tua affinità di coppia? Abbonati al nostro servizio! (costo: 5€ / settimana)</p>
+
+</body>
+</html>
