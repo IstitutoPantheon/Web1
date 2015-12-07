@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Fakebook, il finto Facebook che vale come esercizio</title>
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
+        rel="stylesheet" type="text/css">
+        <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css"
+        rel="stylesheet" type="text/css">
+        <style type="text/css">
+        	.amichetti {
+				max-height: 250px !important;        	
+        	}
+        	.profilo {
+				margin-top: -50% !important;        	
+        	}
+        </style>
+    </head>
+    
+    <body>
+    	<script type="text/javascript">
+    		var utente = prompt("Digita il tuo nome:", ""); // Con un prompt chiedo all'utente di inserire il proprio nome
+    		
+    		switch(utente) { 
+    		// NB: Ogni case corrisponde a un possibile utente
+    			case "Topolino":
+    				var nome = "Mickey Mouse";
+    				var immagini = ["http://www.rai.tv/dl/img/2014/02/1391791301174la-casa-di-topolino.jpg", "http://www.cartoni-animati.com/wp-content/uploads/topolino_4.jpg"];
+    				var cittaNatale = "Roma";
+    				var professione = "Topo";
+    				var amici = ["Paperino", "Pippo", "Topolina"];
+    			break;
+    			
+    			case "Paperino":
+    				var nome = "Donald Duck";
+    				var immagini = ["http://www.bergamopost.it/wp-content/uploads/2014/06/Paperino-Disney.jpg", "http://wwwra.ansa.it/webimages/img_457x/2014/2/14/1392379654131_donald.jpg"];
+    				var cittaNatale = "Reggio Calabria";
+    				var professione = "Papero";
+    				var amici = ["Topolino", "Pippo", "Topolina"];
+    			break;
+    			
+    			case "Pippo":
+    				var nome = "Goofy";
+    				var immagini = ["http://www.ilsollazzo.com/c/disney/images/articles/HowToHookUpYourHomeTheater/02.png", "http://lnx.ginevra2000.it/Disney/pippo1/busted.gif"];
+    				var cittaNatale = "Milano";
+    				var professione = "Amico di Topolino";
+    				var amici = ["Paperino", "Topolino", "Topolina"];
+    			break;
+    			
+    			case "Topolina":
+    				var nome = "Minnie Mouse";
+    				var immagini = ["http://www.dituttodipiuonline.it/files/2015/02/12/Minnie-Mouse-34.jpg", "https://upload.wikimedia.org/wikipedia/en/6/67/Minnie_Mouse.png"];
+    				var cittaNatale = "Roma";
+    				var professione = "Topa (e non fate battute...)";
+    				var amici = ["Pippo", "Topolino", "Paperino"];
+    			break;
+    			
+    			default:
+    				var messaggio = "L'utente inserito è inesistente, oppure non hai inserito nessun nome. Riprova";
+    			
+    		}
+    		
+    		if (utente == "") {
+    			window.alert(messaggio);
+    		}
+    		else if (utente != "Topolino" && utente != "Paperino" && utente != "Pippo" && utente != "Topolina" ) {
+    			document.write("<h2>" + messaggio + "</h2>");
+    		}
+    		
+    	</script>
+    		<!-- L'immagine di copertina -->
+        <div class="cover">
+        		<script type="text/javascript">
+        			document.write("<div class=\"cover-image\" style=\"background-image: url('" + immagini[0] + "');\"></div>"); // Mostra il primo elemento, cioè l'elemento zero, dell'array immagini
+        		</script>
+        </div>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                	<!-- L'immagine del profilo -->
+                    <div class="col-md-3">
+                    	<script type="text/javascript">
+                    		document.write("<img src=\"" + immagini[1] + "\" class=\"img-responsive profilo\">");
+                    		// Mostra il secondo elemento, cioè l'elemento uno, dell'array immagini
+                    	</script>
+                    </div>
+                    <div class="col-md-9">
+                        <h1 class="text-primary"><script type="text/javascript">
+                        	document.write(nome);
+                        </script></h1>
+                        <h3>Città: <script type="text/javascript">
+                        	document.write(cittaNatale);
+                        </script> - Professione: <script type="text/javascript">
+                        	document.write(professione);
+                        </script></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="text-center text-primary">Amici</h1>
+                    </div>
+                </div>
+                <div class="row">
+                	<script type="text/javascript">
+                	/* Per mostrare l'elenco degli amici ricorro a un ciclo for, che si ripete per tutta la lunghezza dell'array. Per stabilire quale immagine mostrare sopra al nome dell'amico, ricorro ad una condizione di tipo if/else if */
+                		var i = 0;
+                		for (i=0; i<amici.length; i++) {
+                			if (amici[i] == "Topolino") {
+                				document.write("<div class=\"col-md-4\"><img src=\"http://www.cartoni-animati.com/wp-content/uploads/topolino_4.jpg\" class=\"center-block img-circle img-responsive amichetti\">");
+                			}
+                			else if (amici[i] == "Paperino") {
+                				document.write("<div class=\"col-md-4\"><img src=\"http://wwwra.ansa.it/webimages/img_457x/2014/2/14/1392379654131_donald.jpg\" class=\"center-block img-circle img-responsive amichetti\">");
+                			}
+                			else if (amici[i] == "Pippo") {
+                				document.write("<div class=\"col-md-4\"><img src=\"http://lnx.ginevra2000.it/Disney/pippo1/busted.gif\" class=\"center-block img-circle img-responsive amichetti\">");
+                			}
+                			else if (amici[i] == "Topolina") {
+                				document.write("<div class=\"col-md-4\"><img src=\"https://upload.wikimedia.org/wikipedia/en/6/67/Minnie_Mouse.png\" class=\"center-block img-circle img-responsive amichetti\">");
+                			}
+                			else {
+                				document.write("<div class=\"col-md-4\"><img src=\"http://pingendo.github.io/pingendo-bootstrap/assets/user_placeholder.png\" class=\"center-block img-circle img-responsive amichetti\">");
+                			}
+                			
+                			document.write("<h3 class=\"text-center\">" + amici[i] + "</h3></div>");
+                		}
+                	</script>
+                    
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
