@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- Collego jQuery -->
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<!-- Collego Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<style type="text/css">
+		.nascosto {
+			display: none;
+		}
+	</style>
+
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<input type="text" id="primaCasella" placeholder="Scrivi qui il tuo nome">
+				<button class="btn btn-danger" id="primoBottone">Invia
+				</button>
+				<div id="primoDiv">
+					<img src="foto/IMG_9403.jpg" class="nascosto" id="primaImmagine">
+				</div>
+				<!-- Secondo div per l'oroscopo -->
+				<div id="secondoDiv" class="nascosto">
+					<select id="primoSelect" name="primoSelect">
+						<option value="Ariete">Ariete</option>
+						<option value="Toro">Toro</option>
+						<option value="Gemelli">Gemelli</option>
+						<option value="Cancro">Cancro</option>
+					</select>
+					<button id="secondoBottone" class="btn btn-danger">Invia</button>
+					
+				</div>
+				<div id="terzoDiv"></div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	switch($("#primoSelect").val()) {
+		case "Ariete":
+		var oroscopo = "Oggi bella giornata";
+		break;
+
+		case "Toro":
+		var oroscopo = "Oggi giornata di schifo";
+		break;
+	}
+
+	$("#primoBottone").click(function() {
+		$("#primoDiv").append("<p>Ciao " + $("#primaCasella").val() + "</p>");
+		$("#primaCasella, #primoBottone").hide(600);
+		$("#primaImmagine").fadeIn("slow");
+		$("#secondoDiv").prepend("<label>Qual è il tuo segno zodiacale?</label>");
+		$("#secondoDiv").fadeIn(600);
+	});
+
+	$("#secondoBottone").click(function(){
+		$("#secondoDiv").hide(500);
+		$("#terzoDiv").append("<h1>" + $("#primoSelect").val() + "</h1><p>" + oroscopo + "</p>");
+	});
+</script>
+
+
+
+
+
+
+</html>
