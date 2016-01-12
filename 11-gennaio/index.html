@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+	<!-- In questo file cerchiamo di far passare i dati che ci fornisce un utente all'interno di un form ad una nuova pagina, diversa dalla prima. Per farlo, salviamo i dati forniti dall'utente nel browser, attraverso l'API Web Storage, spiegata nel libro suggerito e a questo indirizzo (per chi non ha il libro): https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API#localStorage.
+	In questo caso, l'esercizio non è completo perché mancano le parti di web design richieste agli studenti, ma non importa: vi chiedo di concentrarci sulla parte in javascript alla fine del file. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Topolinia - iscriviti alla mailing list</title>
+
+    <!-- Bootstrap Core CSS: questo file utilizza un template di Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/business-frontpage.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Menu -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Start Bootstrap</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Image Background Page Header -->
+    <!-- Note: The background image is set within the business-casual.css file. -->
+    <header class="business-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                	<div class="col-md-7">
+	                    <h1 class="tagline">Resta sempre aggiornato sul tuo personaggio preferito!</h1>
+                    </div>
+                    <div class="col-md-5">
+                    	<form id="registrazioneUtente">
+                          <div class="form-group">
+                            <label for="nomeUtente">Nome</label>
+                            <input type="text" class="form-control" id="nomeUtente" placeholder="Il tuo nome">
+                          </div>
+                          <div class="form-group">
+                            <label for="cognomeUtente">Cognome</label>
+                            <input type="text" class="form-control" id="cognomeUtente" placeholder="Il tuo cognome">
+                          </div>
+                          <div class="form-group">
+                            <label for="emailUtente">Email</label>
+                            <input type="email" id="emailUtente" class="form-control" placeholder="La tua email">
+                          </div>
+                          <div class="form-group">
+                            <label for="personaggioPreferito">Email</label>
+                            <select name="personaggioPreferito" id="personaggioPreferito" class="form-control">
+                            	<option value="TOP">Topolino</option>
+                                <option value="PAP">Paperino</option>
+                                <option value="PIP">Pippo</option>
+                            </select>
+                          </div>
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox"> Ricordami
+                            </label>
+                          </div>
+                          <button type="submit" class="btn btn-default">Iscriviti</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <hr>
+
+
+        <div class="row">
+        	<h1 class="text-center">I vantaggi per i nostri iscritti</h1>
+            <div class="col-sm-4">
+                <img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="">
+                <h2>Notizie in anteprima</h2>
+                <p>Gli iscritti alla nostra mailing list sanno sempre in anteprima cosa accade a Topolinia.</p>
+            </div>
+            <div class="col-sm-4">
+                <img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="">
+                <h2>Un rapporto diretto col personaggio</h2>
+                <p>Gli iscritti alla nostra mailing list hanno informazioni direttamente dal loro personaggio preferito.</p>
+            </div>
+            <div class="col-sm-4">
+                <img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="">
+                <h2>Sconti e Convenzioni</h2>
+                <p>Gli iscritti alla nostra mailing list possono fare acquisti a prezzi vantaggiosi in tutti i negozi di Topolinia.</p>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Topolinia online 2016</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    
+    <!-- Il file per la gestione dello storage -->
+    <script src="js/funzioni.js"></script>
+    
+    <script type="text/javascript">
+    
+    		// Parte una funzione quando l'utente invia il form, a cui abbiamo dato id registrazioneUtente (attraverso il metodo submit() di jQuery)
+		$('#registrazioneUtente').submit(function(event) {
+			event.preventDefault(); // preventDefault dice al form di non fare l'azione che fa di solito (cioè inviare i dati all'esterno: vogliamo che li invii a noi)
+			registraDati(); // Dopo aver "bloccato" le normali azioni del form, facciamo partire una funzione che viene spiegata dopo
+			});
+	
+    	function registraDati() {
+			
+			
+			var nome = $('#nomeUtente').val(); // Assegno ad una variabile il valore che si trova nella casella nomeUtente del form, e così sarà anche per le prossime righe
+			var cognome = $('#cognomeUtente').val();
+			var email = $('#emailUtente').val();
+			var personaggio = $('#personaggioPreferito').val();
+			
+			
+			// Salvo i dati
+			nomeUtente = window.localStorage.setItem("nomeUtente", nome); // Nel computer dell'utente ci sarà un dato strutturato in questo modo -> nomeUtente = {{ nome che l'utente avrà messo nel form }}
+			cognomeUtente = window.localStorage.setItem("cognomeUtente", cognome); // Nel computer dell'utente ci sarà un dato strutturato in questo modo -> cognomeUtente = {{ cognome che l'utente avrà messo nel form }}
+			emailUtente = window.localStorage.setItem("emailUtente", email);
+			personaggioPreferito = window.localStorage.setItem("personaggioPreferito", personaggio);
+			
+			// Invio alla nuova pagina
+			window.location.assign('homepage_post.html'); // Il metodo assign della proprietà location dell'oggetto window serve per "dirottare l'utente in una nuova pagina, di cui specifichiamo l'url tra parentesi"
+			}
+    </script>
+
+</body>
+
+</html>
