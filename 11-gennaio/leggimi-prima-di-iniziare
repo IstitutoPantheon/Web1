@@ -1,0 +1,5 @@
+In questa cartella trovate i file modificati per spiegare l'API Web STorage. Non ci sono i css e i js di Bootstrap a loro collegati: era inutile caricarli, perché potete trovarli scaricando un qualsiasi tema dal sito startbootstrap.
+
+I due file (index.html va aperto per primo) sono opportunamente commentati: vi invito a leggere bene il commento iniziale di entrambi, e poi quelli messi nel "cuore" del funzionamento del meccanismo.
+
+Non c'è, nell'esercizio, la parte relativa al design, che è legata alla vostra capacità creativa (dai colori alle foto, allo stile del testo), e quindi non rientra nelle caratteristiche necessarie per questi file di "controllo".
