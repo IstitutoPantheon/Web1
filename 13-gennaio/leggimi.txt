@@ -1,0 +1,6 @@
+Per la prossima volta l'invito è quello di studiare l'API Geolocation:
+-) per chi ha il libro suggerito, le pagine da studiare sono da 421 a 424;
+-) per chi non ha il libro è suggerita questa pagina: https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation.
+
+Visto che gli esempi fanno riferimento a Google Maps, è il caso di studiare anche le API che Google mette a disposizione per 
+questo servizio: https://developers.google.com/maps/web/
