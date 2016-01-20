@@ -1,0 +1,1 @@
+<p>Immanuel Kant (Königsberg, 22 aprile 1724 – Königsberg, 12 febbraio 1804) è stato un filosofo tedesco. Fu uno dei più importanti esponenti dell'illuminismo tedesco, e anticipatore - nella fase finale della sua speculazione - degli elementi fondanti della filosofia idealistica.</p>
