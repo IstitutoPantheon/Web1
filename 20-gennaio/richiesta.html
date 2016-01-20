@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Cerca una voce</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function aggiungiFile(opzione) {
+				// Creo un nuovo oggetto XMLHttpRequest e gli assegno una variabile di nome ciccio
+				ciccio = new XMLHttpRequest();
+				
+				/* L'oggetto XMLHttpRequest si occuperà
+				 di inviare richieste al server e 
+				 otterrà delle risposte che equivalgono
+				  a cambiamenti di stato. Per sapere se
+				   una mia richiesta è stata esaudita 
+				   lo stato deve essere 4 e lo status 
+				   deve essere 200. Per questo utilizzo
+				    la funzione che segue */
+			  	ciccio.onreadystatechange=function() {
+			  		if(ciccio.readyState==4 && ciccio.status==200) {
+			    document.getElementById("parteRicaricata").innerHTML=ciccio.responseText;
+			    }
+			  }
+			  
+			//Qui avviene la richiesta  
+			/* Diciamo all'oggetto XMLHttpRequest dove deve andare a prendere il contenuto che ci serve */
+			ciccio.open("GET","trovaopzione.php?opzione="+opzione,true); // Il metodo open ha come parametri il protocollo (GET o POST), l'URL, un booleano per l'asincronia
+			
+			// La richiesta preparata da open() viene inviata da send()
+			ciccio.send();
+			}
+		</script>
+		<form id="modulo" name="modulo" method="post" action="elaborarichiesta.php">
+			<label for="voceCercata">
+				Cerca
+			</label>
+			<input type="text" id="voceCercata" name="voceCercata">
+			
+			<!-- Menu a tendina per far partire Ajax -->
+			<select name="scelteVarie" onchange="aggiungiFile(this.value)">
+				<option value="niente">
+					---
+				</option>
+				<option value="uno">
+					Opzione 1
+				</option>
+				<option value="due">
+					Opzione 2
+				</option>
+			</select>
+			<!-- Fine menu a tendina -->
+			
+			
+			<input type="submit" value="Invia richiesta">
+			
+		</form>
+		
+		<!-- In questo div andrà la parte caricata con AJAX -->
+		<div id="parteRicaricata">
+			
+		</div>
+	</body>
+</html>
