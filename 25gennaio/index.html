@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Esempio che mette insieme tutto</title>
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			
+            <h1>Scegli l'azione da compiere</h1>
+            
+			<button type="button" class="btn btn-success"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>Cerca</button>
+
+		</div>
+    </div>
+    <div class="row">
+    </div>
+    <div class="row">
+		<div class="col-md-8 col-md-offset-2" id="modulo">
+        </div>
+    </div>
+    <div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<video src="vacanze.ogv" autoplay height="400" width="800" loop="false" controls poster="selfie.jpg">
+				
+			</video>
+			
+			<video poster="selfie.jpg" autoplay>
+				<source src="vacanze.ogv"></source>
+				<track src="vacanze.vtt" kind="subtitles" label="Italiano" lang="it"></track>
+			</video>
+			
+			<iframe src="http://www.corriere.it" width="500" height="500"></iframe>
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+	$('button').click(function(){
+		$(this).hide(1000);
+		$("#modulo").load("mostraform.php");	
+	});
+</script>
+</body>
+</html>
