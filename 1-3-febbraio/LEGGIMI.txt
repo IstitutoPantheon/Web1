@@ -7,5 +7,6 @@ Questi file sono lo scheletro di un sito, realizzato in php, e con un database d
 - i file "di supporto" stanno nella cartella inc, e sono la testata del sito (header.php) e il footer (footer.php). Li abbiamo messi lì perché:
   - li includiamo nei file di contenuto attraverso il comando "include"
   - grazie a include, scriviamo il loro contenuto una volta sola. Se dovessimo riscrivere la testata di un sito ogni volta, su ogni file di contenuto, faremmo la stessa cosa più volte. Cosa succederebbe, poi, se creassi un nuovo file css da collegare nell'head? dovrei scrivere il collegamento a questo file su tutti i file di contenuto. includendo header.php, invece, devo aggiungere il <link> al nuovo file soltanto lì, una volta, e questo varrà su tutto il mio sito
+- i vantaggi di usare php consistono nel poter visualizzare singolarmente tutte le barzellette possibili inserite nel database in un unico file, barzelletta.php, e l'elenco di tutte le categorie in un unico file, categoria.php
   
   
