@@ -1,0 +1,11 @@
+Questi file sono lo scheletro di un sito, realizzato in php, e con un database di appoggio. Bada bene:
+- i file "di contenuto", che mostrano qualcosa all'utente (i contenuti del sito, insomma) stanno nella cartella principale
+- i file di "logica" stanno nella cartella assets, e servono a:
+  - impostare i dati che mi servono per collegarmi a un database (db.php)
+  - gestire il login di un utente
+  - gestire l'invio di una nuova barzelletta da parte di un utente
+- i file "di supporto" stanno nella cartella inc, e sono la testata del sito (header.php) e il footer (footer.php). Li abbiamo messi lì perché:
+  - li includiamo nei file di contenuto attraverso il comando "include"
+  - grazie a include, scriviamo il loro contenuto una volta sola. Se dovessimo riscrivere la testata di un sito ogni volta, su ogni file di contenuto, faremmo la stessa cosa più volte. Cosa succederebbe, poi, se creassi un nuovo file css da collegare nell'head? dovrei scrivere il collegamento a questo file su tutti i file di contenuto. includendo header.php, invece, devo aggiungere il <link> al nuovo file soltanto lì, una volta, e questo varrà su tutto il mio sito
+  
+  
